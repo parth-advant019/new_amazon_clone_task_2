@@ -478,7 +478,7 @@
           class="text-blue-400">Explore more</span></div>
 
       <button onclick="scrollPrev()" class="hidden md:flex absolute left-0 top-1/2 z-10
-           bg-white shadow rounded-full w-10 h-10 items-center justify-center">
+           bg-white shadow border-gray-300 rounded-lg w-10 h-10 items-center justify-center hover:bg-gray-100">
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
           <path
@@ -652,15 +652,13 @@
         </div>
         <!--contents card-------------------------------------->
         <button onclick="scrollNext()" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10
-                 bg-white shadow rounded-full w-10 h-10 items-center justify-center">
+                 bg-white shadow border-gray-300 rounded-lg w-10 h-10 items-center justify-center hover:bg-gray-100">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path
               d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
           </svg>
         </button>
-
       </div>
-
     </div>
 
     <!--grid 4 squar carousal------------------------------------------->
@@ -670,8 +668,7 @@
       <div class="ml-5 text-lg mb-3">Starting ₹99 | Deals on trending booksSee all offers <span
           class="text-blue-400">See more</span></div>
 
-      <button onclick="scrollBack()" class="hidden md:flex absolute left-0 top-1/2 z-10
-           bg-white shadow rounded-full w-10 h-10 items-center justify-center">
+      <button onclick="scrollBack()" class="hidden md:flex absolute left-0 top-1/2 z-10 bg-white shadow border border-gray-300 rounded-lg w-10 h-10 items-center justify-center hover:bg-gray-100">
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
           <path
@@ -827,8 +824,7 @@
         </div>
 
         <!--contents card-------------------------------------->
-        <button onclick="scrollFront()" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10
-                 bg-white shadow rounded-full w-10 h-10 items-center justify-center">
+        <button onclick="scrollFront()" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow border border-gray-300 rounded-lg w-10 h-10 items-center justify-center hover:bg-gray-100">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path
               d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
@@ -876,531 +872,69 @@
 
 
 
-  <!--mobile carousal and card-->
-  <div class="w-full bg-white">
+  <!--mobile carousal and card pagenation-->
+  <div class="w-full bg-white py-6">
+    <div class="border-t border-gray-300 mt-1"></div><!-- bottom line -->
+    <div class="relative mt-2 bg-white">
+      
 
-    <div class="relative mt-6 bg-white pt-3">
+      <div class="flex justify-between items-center mb-3">
+        <h2 class="ml-5 text-lg mb-3 font-semibold">Inspired by your browsing history</h2>
 
-      <div class="ml-5 text-lg mb-3">Inspired by your browsing history <span class="text-blue-400">See more</span></div>
+        <div class="flex items-center mr-4 gap-3 text-sm">
+          <span class="text-gray-500">
+            Page <span id="currentPage"></span> of <span id="totalPages"></span>
+          </span>
 
-      <button onclick="mobilescrollBack()" class="hidden md:flex absolute left-0 top-1/2 z-10
-           bg-white shadow rounded-full w-10 h-10 items-center justify-center">
+          <span id="startOverBtn" class="text-blue-600 cursor-pointer" onclick="startOver()">
+            | Start over
+          </span>
+        </div>
+      </div>
+    </div>
 
+    <div class="relative">
+      
+      <button onclick="prevPage()"
+        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-lg w-10 h-10 flex items-center justify-center hover:bg-gray-100 z-10">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
           <path
             d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z" />
-        </svg>
+        </svg>      
       </button>
 
-      <div id="mobileScroll" class="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth px-12">
-
-        <!--contents card-------------------------------------->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/61OB0B7FA-L._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <!---->
-        <div class="flex flex-col min-w-[220px] max-w-[220px] text-left">
-          <div class="flex justify-start">
-            <img src="https://images-eu.ssl-images-amazon.com/images/I/71M5OWNdteL._AC_UL165_SR165,165_.jpg"
-              class="max-32 max-32 object-contain">
-
-          </div>
-          <p class="text-blue-700 cursor-pointer text-sm leading-snug line-clamp-2">iQOO 15 (Legend, 16GB RAM, 512GB
-            Storage) | Fastest Snapdragon 8 Elite Gen 5 Processor*</p>
-          <p class="text-orange-500">☆☆☆☆☆ 379</p>
-          <p>in 250+ carts</p>
-          <div class="flex items-center gap-2 mt-2">
-            <span class="bg-red-600 text-white font-semibold whitespace-nowrap">5% off</span>
-            <span class="text-sm text-red-600 font-semibold whitespace-nowrap">Limited time deal</span>
-
-          </div>
-          <p>$70,999.00</p>
-          <p>M.R.P <span class="text-gray-500 line-through">80,999.00</span></p>
-          <div class="mt-1 text-sm">
-            <p class="whitespace-nowrap">Get it by <span class="font-semibold">Sunday, January 25</span>,</p>
-            <p>
-              FREE Delivery by Amazon
-            </p>
-          </div>
-
-        </div>
-
-        <button onclick="mobilescrollFront()" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10
-                 bg-white shadow rounded-full w-10 h-10 items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+      <div id="productGrid" class="grid md:grid-cols-7 grid-cols-1 gap-4 pl-14 pr-14"></div>
+
+      <button onclick="nextPage()"
+        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-lg w-10 h-10 flex items-center justify-center hover:bg-gray-100 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
             <path
               d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
           </svg>
+
+      </button>
+
+    </div>
+
+    <div class="border-t border-gray-300 mt-12"></div><!-- bottom line -->
+
+    <!------------------------------------------------------------------>
+  </div>
+
+  <!--personal card-->
+  <div class="w-full bg-white border-b border-gray-300 py-10">
+    <div class="max-w-[600px] mx-auto flex flex-col md:flex-row">
+
+      <div class="w-full md:w-4/5 px-12">
+        <h1 class="text-xl font-bold">See personalized recommendations</h1>
+        <p class="mt-2 text-sm">New customer? | <span class="text-blue-600 cursor-pointer">click hear</span> </p>
+        <button class="mt-4 bg-orange-400 hover:bg-orange-500 text-black font-semibold px-6 py-2 rounded-full">
+          Shop now
         </button>
-
       </div>
     </div>
 
-    <!--personal card-->
-    <div class="w-full bg-white border-t border-b border-gray-300 py-10 mt-10">
-      <div class="max-w-[600px] mx-auto flex flex-col md:flex-row">
-
-        <div class="w-full md:w-4/5 px-12">
-          <h1 class="text-xl font-bold">See personalized recommendations</h1>
-          <p class="mt-2 text-sm">New customer? | <span class="text-blue-600 cursor-pointer">click hear</span> </p>
-          <button class="mt-4 bg-orange-400 hover:bg-orange-500 text-black font-semibold px-6 py-2 rounded-full">
-            Shop now
-          </button>
-        </div>
-      </div>
-
-    </div>
+  </div>
   </div>
 
   <a href="#top"
@@ -1550,7 +1084,7 @@
 
 
         </div>
-       <!--4 one-->
+        <!--4 one-->
         <div>
           <div class="cursor-pointer hover:underline underline-offset-1">
             <h3 class="font-bold">AbeBooks</h3>
@@ -1584,4 +1118,5 @@
   </div>
   <script src="./script.js"></script>
 </body>
+
 </html>
